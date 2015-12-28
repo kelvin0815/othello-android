@@ -14,5 +14,4 @@ Testing AVD: Nexus S API 22
 Gomoku---Othello-JAVA by winmhtun <br>
 https://github.com/winmhtun/Gomoku---Othello-JAVA
 
-#### E-mail
-kelvinchang0815@gmail.com
+E-mail: kelvinchang0815@gmail.com
