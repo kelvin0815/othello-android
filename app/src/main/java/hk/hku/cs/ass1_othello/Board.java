@@ -143,7 +143,8 @@ public class Board {
                                     int testRow = currentRow + dist * dirRow;
                                     int testCol = currentCol + dist * dirCol;
 
-                                    if (board[testRow][testCol] != (this.currentPlayer.getColor() == COLOR.BLACK ? COLOR.WHITE : COLOR.BLACK)) {
+                                    if (board[testRow][testCol] != (this.currentPlayer.getColor() == 
+                                        COLOR.BLACK ? COLOR.WHITE : COLOR.BLACK)) {
                                         canFlip = false;
                                     }
                                 }
@@ -155,7 +156,8 @@ public class Board {
                                         int finalRow = currentRow + flipDist * dirRow;
                                         int finalCol = currentCol + flipDist * dirCol;
 
-                                        if(board[finalRow][finalCol] == (this.currentPlayer.getColor() == COLOR.BLACK ? COLOR.WHITE : COLOR.BLACK)) {
+                                        if(board[finalRow][finalCol] == (this.currentPlayer.getColor() == 
+                                            COLOR.BLACK ? COLOR.WHITE : COLOR.BLACK)) {
                                             board[finalRow][finalCol] = this.currentPlayer.getColor();
                                         }
                                     }
