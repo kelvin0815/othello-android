@@ -75,7 +75,9 @@ public class Board {
                 if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
 
                     // Check if board[newRow][newCol] is opposite color to currentPlayer
-                    if (board[newRow][newCol] == (this.currentPlayer.getColor() == COLOR.WHITE ? COLOR.BLACK : COLOR.WHITE)) {
+                    COLOR oppoColor = 
+                        this.currentPlayer.getColor() == COLOR.WHITE ? COLOR.BLACK : COLOR.WHITE;
+                    if (board[newRow][newCol] == oppoColor) {
                         for (int range = 1; range < 8; range++) {
 
                             int nRow = currentRow + range * dirRow;
@@ -86,7 +88,7 @@ public class Board {
                                 continue;
                             }
 
-                            // break if we scan the empty slot before the closest slot with current player colour
+                            // break if we scan the empty slot
                             if(board[nRow][nCol] == COLOR.EMPTY) {
                                 break;
                             }
@@ -124,7 +126,9 @@ public class Board {
                 if(newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
 
                     // return true if board[newRow][newCol] is opposite color to currentPlayer
-                    if(board[newRow][newCol] == (this.currentPlayer.getColor() == COLOR.BLACK ? COLOR.WHITE : COLOR.BLACK)) {
+                    COLOR oppoColor = 
+                        this.currentPlayer.getColor() == COLOR.WHITE ? COLOR.BLACK : COLOR.WHITE;
+                    if(board[newRow][newCol] == oppoColor) {
                         for(int range = 0; range < 8; range++) {
 
                             int nRow = currentRow + range * dirRow;
@@ -143,8 +147,7 @@ public class Board {
                                     int testRow = currentRow + dist * dirRow;
                                     int testCol = currentCol + dist * dirCol;
 
-                                    if (board[testRow][testCol] != (this.currentPlayer.getColor() == 
-                                        COLOR.BLACK ? COLOR.WHITE : COLOR.BLACK)) {
+                                    if (board[testRow][testCol] != oppoColor) {
                                         canFlip = false;
                                     }
                                 }
@@ -156,9 +159,9 @@ public class Board {
                                         int finalRow = currentRow + flipDist * dirRow;
                                         int finalCol = currentCol + flipDist * dirCol;
 
-                                        if(board[finalRow][finalCol] == (this.currentPlayer.getColor() == 
-                                            COLOR.BLACK ? COLOR.WHITE : COLOR.BLACK)) {
-                                            board[finalRow][finalCol] = this.currentPlayer.getColor();
+                                        if(board[finalRow][finalCol] == oppoColor) {
+                                            board[finalRow][finalCol] = 
+                                                this.currentPlayer.getColor();
                                         }
                                     }
                                 }
